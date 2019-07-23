@@ -1,0 +1,20 @@
+Convertir un film en série d'images
+$ ffmpeg -i filename.mp4 -vcodec png -an "image_%03d.png" 
+$ ffmpeg -framerate 24 -i "image_%03d.png" -vcodec h264 - bin 10485760 "Transcoded.mp4"
+
+Transcoder une vidéo en prores
+$ ffmpeg -i "filename.mp4" -vcodec prores -profile 2 "out.mov"
+
+0 = Proxy 
+1 = low
+2 = Normal 422
+3 = Prores HQ
+
+Faire tourner une video
+$ ffmpeg -i in.mp4 -vf "transpose = 1" out.mov
+
+0 = counter clock et inversion
+1 = clock 
+2 = counter clock
+3 = clock et inversion
+
